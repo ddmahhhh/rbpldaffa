@@ -45,4 +45,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/upbarang', [BarangController::class,'indexpost']);
     Route::get('/upbarang/{id}', [BarangController::class, 'show'])->name('post.show');
 
+Route::get('/etalase-toko', [EtalaseController::class, 'etalase'])->name('etalase');
 });
