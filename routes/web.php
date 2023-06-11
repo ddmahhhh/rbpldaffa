@@ -44,5 +44,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/upbarang', [BarangController::class,'store']);
     Route::get('/upbarang', [BarangController::class,'indexpost']);
     Route::get('/upbarang/{id}', [BarangController::class, 'show'])->name('post.show');
-
+    Daffa Maheswara bu
 });
