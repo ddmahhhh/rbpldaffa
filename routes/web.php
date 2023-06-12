@@ -38,10 +38,6 @@ Route::get('/Searchitem', function () {
     return view('Pencarian-barang');
 });
 
-Route::get('Searchtoko', function () {
-    return view('Pencarian-toko');
-});
-
 Route::get('/listtoko', [TokoController::class,'index']);
 Route::get('/listtoko/{id}', [TokoController::class,'show'])->name('show');
 Route::get('/listtoko', [TokoController::class,'search'])->name('search');

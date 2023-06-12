@@ -114,12 +114,18 @@
             object-fit: fill;
         }
 
-        .title-card {
+        .card-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-text {
+            flex: 1;
             width: 800px;
             height: 170px;
         }
 
-        .card-button {
+        .btn {
             position: absolute;
             top: 50%;
             right: 10px;
@@ -131,6 +137,9 @@
             align-items: center;
             background: none;
             cursor: pointer;
+            text-decoration: none;
+            color: #000000;
+
         }
 
         .navbar-hamburger {
@@ -238,8 +247,8 @@
 
         <ul class="navbar-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Pasar</a></li>
             <li><a href="#">Toko</a></li>
+            <li><a href="#">Bandingkan Harga</a></li>
         </ul>
         <div class="navbar-profile">
             <i class="fas fa-user profile-icon"></i>
@@ -259,10 +268,12 @@
                 @foreach ($toko as $t)
                     <div class="card">
                         <div class="card-content">
-                            <h3>{{ $t->name }}</h3>
-                            <p>{{ $t->kategori_toko }}</p>
+                            <img class="card-image" src={{ $t->foto_toko }} alt="Card Image">
+                            <div class="card-text">
+                                <h2>{{ $t->name }}</h2>
+                                <p>{{ $t->kategori_toko }}</p>
+                            </div>
                             <a href="{{ route('show', ['id' => $t->id]) }}" class="btn card-button">→</a>
-
                         </div>
                     </div>
                 @endforeach
@@ -275,6 +286,7 @@
 
         <br />
     </div>
+
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
@@ -286,7 +298,6 @@
     <div class="sidebar">
         <ul class="sidebar-links">
             <li><a href="#">Homepage</a></li>
-            <li><a href="#">Buku Panduan</a></li>
             <li><a href="#">Pengaturan Akun</a></li>
             <li class="dropdown-link"><a href="#">Kategori Toko <i class="fas fa-chevron-down"></i></a></li>
             <ul class="dropdown-menu">
