@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('deskripsi_toko',255);
             $table->string('kategori_toko',255);
             $table->string('jamoperasional_toko',255);
+            $table->string('foto_toko');
             $table->timestamps();
             });
     }

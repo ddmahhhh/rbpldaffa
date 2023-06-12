@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'lokasi_toko','telp_toko','kontak_toko','deskripsi_toko','kategori_toko','jamoperasional_toko',
+        'lokasi_toko','telp_toko','kontak_toko','deskripsi_toko','kategori_toko','jamoperasional_toko','foto_toko',
     ];
 
     /**
