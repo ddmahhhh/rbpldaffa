@@ -61,3 +61,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/etalase-toko', [EtalaseController::class, 'etalase'])->name('etalase');
 });
 
+Route::controller(AturAkunTokoController::class)->group(function () {
+    Route::get('/aturinformasi', '\App\Http\Controllers\AturTokoController@aturinformasi');
+    Route::get('/aturakun', '\App\Http\Controllers\AturTokoController@aturakun');
+
+});
