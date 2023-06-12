@@ -58,3 +58,4 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/etalase-toko', [EtalaseController::class, 'etalase'])->name('etalase');
 });
+asfgabhsdasbd
