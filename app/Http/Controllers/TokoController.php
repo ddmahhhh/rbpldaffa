@@ -39,11 +39,10 @@ class TokoController extends Controller
         // Search in the title and body columns from the posts table
         $toko = User::query()
             ->where('name', 'LIKE', "%{$search}%")
-            ->orWhere('kontak_toko', 'LIKE', "%{$search}%")
             ->get();
 
         // Return the search view with the resluts compacted
-        return view('showtoko', compact('toko'));
+        return view('Showtoko', compact('toko'));
     }
 
 }

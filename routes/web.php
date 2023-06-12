@@ -37,9 +37,15 @@ Route::get('/compareprice', function () {
 Route::get('/Searchitem', function () {
     return view('Pencarian-barang');
 });
+
+Route::get('Searchtoko', function () {
+    return view('Pencarian-toko');
+});
+
 Route::get('/listtoko', [TokoController::class,'index']);
 Route::get('/listtoko/{id}', [TokoController::class,'show'])->name('show');
 Route::get('/listtoko', [TokoController::class,'search'])->name('search');
+
 
 Route::get('/showbarang', [BarangController::class,'index'])->name('showbarang');
 Route::get('/cari', [BarangController::class,'cari'])->name('cari');
@@ -58,4 +64,4 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/etalase-toko', [EtalaseController::class, 'etalase'])->name('etalase');
 });
-asfgabhsdasbd
+

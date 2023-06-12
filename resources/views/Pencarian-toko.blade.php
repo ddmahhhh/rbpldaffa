@@ -226,8 +226,6 @@
     </style>
 </head>
 
-
-
 <body>
     <nav class="navbar">
         <div class="navbar-hamburger">
@@ -247,57 +245,53 @@
     </nav>
 
     <div class="searchbar">
-        <form action="{{ route('search') }}" method="GET">
-            <input type="text" placeholder="Cari Toko" name="search" required />
+        <form id="search-form" action="/toko/cari" method="GET">
+            <input type="text" name="cari" placeholder="Cari Toko" value="{{ old('cari') }}">
             <input type="submit" value="CARI" style="display: none;">
         </form>
+
+        <script>
+            document.getElementById('search-form').addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) { // 13 is the Enter key code
+                    event.preventDefault(); // Prevent the default form submission
+                    this.submit(); // Submit the form
+                }
+            });
+        </script>
     </div>
 
     <div class="search-results">
         <div class="card-container">
-            @if ($toko->isNotEmpty())
-                @foreach ($toko as $t)
-                    <div class="card">
-                        <div class="card-content">
-                            <h3>{{ $t->name }}</h3>
-                            <p>{{ $t->kategori_toko }}</p>
-                            <a href="{{ route('show', ['id' => $t->id]) }}" class="btn card-button">→</a>
-
-                        </div>
+            @foreach ($toko as $t)
+                <div class="card">
+                    <div class="card-content">
+                        <h3>{{ $t->nama_toko }}</h3>
+                        <p>{{ $t->kategori_toko }}</p>
+                        <button class="btn card-button"
+                            onclick="window.location.href='/toko/{{ $t->id }}'">→</button>
                     </div>
-                @endforeach
-            @else
-                <div>
-                    <h2>No posts found</h2>
                 </div>
-            @endif
+            @endforeach
         </div>
 
-        <br />
-    </div>
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
+        <br/>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
+        {{ $toko->links() }}
+    </div>
 
     <div class="sidebar">
         <ul class="sidebar-links">
             <li><a href="#">Homepage</a></li>
             <li><a href="#">Buku Panduan</a></li>
             <li><a href="#">Pengaturan Akun</a></li>
+
+
             <li class="dropdown-link"><a href="#">Kategori Toko <i class="fas fa-chevron-down"></i></a></li>
             <ul class="dropdown-menu">
                 <li><a href="#">Category 1</a></li>
                 <li><a href="#">Category 2</a></li>
                 <li><a href="#">Category 3</a></li>
             </ul>
-            <li> <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
-            </li>
-
 
             <!-- Add more sidebar links as needed -->
         </ul>
