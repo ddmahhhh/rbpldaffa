@@ -2,17 +2,19 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="logo_nav">
                 <!-- Logo -->
-                <div class="logo_nav"> <a href="{{ route('dashboard') }}">E-PASAR </a>
-                </div>
+                 <a href="{{ route('dashboard') }}">E-PASAR </a>
+            </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden sm:-my-px sm:ml-10 sm:flex sm:text-black-500"> 
-                    <x-nav-link class="" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <!-- Settings Dropdown & Navigation Links -->
+            <div class="hidden sm:flex sm:items-center sm:ml-6 ">
+            
+                <div class="hidden space-x-8 sm:ml-10 sm:flex sm:text-black-500"> 
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Beranda') }}
                     </x-nav-link>
-                <!--    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Pasar') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -20,15 +22,12 @@
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Pencarian Barang') }}
-                    </x-nav-link> -->
-                </div> 
-            </div>
-
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
+                    </x-nav-link>
+                </div>
+            <!--  -->
+            <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-black-500 text-black-400 bg-white bg-gray-800 hover:text-black-700 hover:text-black-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-bold rounded-md text-black-500 text-black-400 bg-white bg-gray-800 hover:text-black-700 hover:text-black-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
