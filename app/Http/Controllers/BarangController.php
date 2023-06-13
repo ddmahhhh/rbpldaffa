@@ -98,7 +98,29 @@ class BarangController extends Controller
         return view('Showbarang', compact('item'));
     }
 
+    public function tambahBarang(Request $request)
+    {
+        $dataBarang = barang::create($request->all());
+        if($request->hasFile('foto_produk')){
+            $request->file('foto_produk')->move('foto_produk/', $request->file('foto_produk')->getClientOriginalName());
+            $dataBarang->foto_produk = $request->file('foto_produk')->getClientOriginalName();
+            $dataBarang->save();
+        }
+        return redirect()->route('etalase')->with('success', 'Barang berhasil ditambahkan!');
+    }
 
+    public function viewBarang($id)
+    {
+        $barang = barang::find($id);
+        return view('/update-barang', compact('barang'));
+    }
+
+    public function updateBarang(Request $request, $id)
+    {
+        $barang = barang::find($id);
+        $barang->update($request->all());
+        return redirect()->route('etalase')->with('success', 'Barang berhasil diubah!');
+    }
 
 
 }

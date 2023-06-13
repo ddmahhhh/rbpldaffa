@@ -1,0 +1,48 @@
+@import url("http://fonts.googleapis/com/css?family=Inter:700,600,400");
+
+*{
+    font-size: 14px;
+}
+
+body{
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    margin: auto;
+    align-items: center;
+}
+
+.header{
+    margin: auto;
+    margin: 40px 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-15{
+    margin: auto;
+    margin: 40px 45px;
+}
+
+.sec-1 h4{
+    margin: 25px;
+    justify-content: center;
+    display: flex;
+}
+
+.wrapper{
+    margin: auto;
+    margin: 20px 100px;
+}
+
+.sec-2{
+    margin: auto;
+    justify-content: center;
+}
+
+form{
+    margin: 5% 15%;
+}
+
+.submit{
+    margin: 40px;
+    margin: 2% 20%
+}

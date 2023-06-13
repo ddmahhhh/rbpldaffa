@@ -60,6 +60,14 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/etalase-toko', [EtalaseController::class, 'etalase'])->name('etalase');
 });
+
+Route::get('/halaman-barang', [EtalaseController::class, 'showBarang']);
+Route::post('/tambah-barang', [BarangController::class, 'tambahBarang']);
+
+Route::get('/update-barang/{id}', [BarangController::class, 'viewBarang']);
+Route::post('/updated-barang/{id}', [BarangController::class, 'updateBarang']);
+Route::get('/delete-barang/{id}', [EtalaseController::class, 'deleteBarang'])->name('delete');
+
 Route::controller(AturAkunTokoController::class)->group(function () {
     Route::get('/aturakun', '\App\Http\Controllers\AturTokoController@aturakun');
 
