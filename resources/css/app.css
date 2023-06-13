@@ -23,6 +23,13 @@ body {
     margin: 0% 10%;
 }
 
+.navbar{
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid: 65px / 25% 25% 25% 25%;
+}
+
 /*isi masuk*/
 .logo{
     text-align: center;
@@ -33,6 +40,15 @@ body {
     line-height: 70px;
     border: 2px solid grey;
     border-radius: 20px;
+}
+
+.logo_nav{
+    text-align: center;
+    margin: 10% 0%;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .judul{
