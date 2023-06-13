@@ -1,4 +1,9 @@
 <x-guest-layout>
+<div class="logo_kunci"> <i class='bx bxs-lock-open lock-icon'></i> </div>
+    <div class="judul_password">Ubah Password</div> 
+    <div class="mb-4 text-sm text-black-600">
+        {{ __('Masukkan Password Baru Anda. Password baru minimal 8 karakter yang terdiri dari kombinasi angka dan huruf') }}
+    </div>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 

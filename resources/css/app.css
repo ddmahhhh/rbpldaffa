@@ -77,5 +77,20 @@ form input{
     border: 1px solid black;
     border-radius: 10px;
     margin-bottom: 15px;
-    padding: 4% 7%;
+    padding: 3% 7%;
+}
+
+
+.logo_kunci i{
+    font-size: 100px;
+    color: black;
+    padding: 0% 40%;
+}
+
+.judul_password{
+    padding: 5% 0%;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    justify-content: center;
 }

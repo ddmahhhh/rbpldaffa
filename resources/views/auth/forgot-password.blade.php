@@ -1,5 +1,8 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
+<div class="logo_kunci"> <i class='bx bxs-lock lock-icon'></i> </div>
+
+    <div class="judul_password">Kesulitan untuk Masuk?</div> 
+    <div class="mb-4 text-sm text-black-600">
         {{ __('Masukkan email dan kami akan mengirim Anda tautan untuk kembali ke akun Anda') }}
     </div>
 
