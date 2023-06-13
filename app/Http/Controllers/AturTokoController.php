@@ -7,9 +7,6 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 class AturTokoController extends Controller{
-    public function aturinformasi(){
-        return view('AturInformasiToko');
-    }
     public function aturakun(){
         return view('AturAkunToko');
     }

@@ -16,9 +16,13 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="atur_akun.css">
 <style>
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
 
 
     body {font-family: Arial, Helvetica, sans-serif;}
@@ -26,8 +30,6 @@
 .body{
     padding: 20px;
 }
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 .navbar {
             background-color: #FFFFFF;
@@ -153,6 +155,17 @@
         }
 
 
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
 .left {
   float: left;
   width: 40%;
@@ -167,27 +180,36 @@
   padding: 50px;
   margin-right: 40px;
 }
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
 .top-left{
     margin-left: 90px;
 }
 .top-left h3{
   text-indent: 50px;
 }
+.buttonprofil{
+    width: 130px;
+  height: 40px;
+  color: #000000;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  background:#fff;
+border: 2px solid #000000;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+}
 .custom-btn {
   width: 130px;
   height: 40px;
   color: #000000;
-
   border-radius: 5px;
   padding: 10px 25px;
   font-family: 'Lato', sans-serif;
@@ -216,9 +238,17 @@ border: 2px solid #000000;
   height: 40px;
   line-height: 42px;
   padding: 0;
+  float: left;
+}
+.btn-3 {
+background:#fff;
+border: 2px solid #000000;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
   float: right;
 }
-
 
 </style>
 </head>
@@ -255,34 +285,52 @@ border: 2px solid #000000;
                 <li><a href="#">Category 3</a></li>
             </ul>
         </ul>
+    </div>
+
+    <div class="top-left">
+        <br><br>
+        <button class="custom-btn btn-1">Kembali</button>
+        <h3><b>Pengaturan Akun</h3>
     </div>
 
-<div class="top-left">
-    <br><br>
-    <button class="custom-btn btn-1">Kembali</button>
-    <h3><b>Pengaturan Informasi Toko</h3>
-</div>
     <div class="left">
+        <img src="coba.jpg" al
+        t="image">
+        <div class="buttonprofil">
+            <input type="submit" value="Ganti Profil">
+        </div>
         <form action="/AturAkunToko.php">
-<br>
-            <label for="kategori">Kategori Toko</label>
-            <select name="kategori" id="kategori">
-                <option value="toko_baju">Toko Baju</option>
-                <option value="toko_buah">Toko Buah</option>
-                <option value="toko_sayur">Toko Sayur</option>
-              </select>
+            <br>
+                        <label for="kategori">Kategori Toko</label>
+                        <select name="kategori" id="kategori">
+                            <option value="toko_baju">Toko Baju</option>
+                            <option value="toko_buah">Toko Buah</option>
+                            <option value="toko_sayur">Toko Sayur</option>
+                          </select>
 
-            <label for="jam_operasional">Jam Operasional</label>
-            <input type="text" id="jam_operasional" name="jamoperasional" placeholder="hh.mm-hh.mm">
-        </form>
-
+                        <label for="jam_operasional">Jam Operasional</label>
+                        <input type="text" id="jam_operasional" name="jamoperasional" placeholder="hh.mm-hh.mm">
+                    </form>
     </div>
 
     <div class="right">
-        <br>
-        <form action="/AturInformasiToko.php">
+        <form action="/AturAkunToko.php">
+            <h3>Informasi User</h3>
+            <label for="nama_user">Nama</label>
+            <input type="text" id="nama_user" name="namauser" placeholder="Nama User">
+
+            <label for="email">Alamat E-mail</label>
+            <input type="text" id="email" name="email" placeholder="user@email.com">
+
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" placeholder="...">
+
+            <label for="no_handphone">No. Handphone</label>
+            <input type="text" id="no_handphone" name="nohandphone" placeholder="...">
+            <br><br><br>
+            <h3>Informasi Toko</h3>
             <label for="nama_toko">Nama Toko</label>
-            <input type="text" id="nama_toko" name="namatoko" placeholder="...">
+            <input type="text" id="nama_toko" name="namatoko" placeholder="Nama Toko">
 
             <label for="kontak_toko">Kontak Toko</label>
             <input type="text" id="kontak_toko" name="kontaktoko" placeholder="...">
@@ -297,10 +345,7 @@ border: 2px solid #000000;
             <textarea id="deskripsi_toko" name="dekripsitoko" placeholder="..." style="height:200px"></textarea>
 
             <button class="custom-btn btn-2">Etalase Toko</button>
-        </form>
-    </div>
-
-
+            <button class="custom-btn btn-3">Simpan</button>
     </div>
 
 
