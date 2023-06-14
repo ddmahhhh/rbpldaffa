@@ -149,11 +149,6 @@
 
     </div>
     </div>
-<<<<<<< Updated upstream
-
-=======
-    daffa mahe
->>>>>>> Stashed changes
 </body>
 
 </html>

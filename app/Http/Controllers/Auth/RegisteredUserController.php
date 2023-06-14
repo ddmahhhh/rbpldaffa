@@ -34,12 +34,24 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'telp_toko' => ['required', 'string', 'max:255'],
+            'kontak_toko' => ['required', 'string', 'max:255'],
+            'lokasi_toko' => ['required', 'string', 'max:255'],
+            'deskripsi_toko' => ['required', 'string', 'max:255'],
+            'kategori_toko' => ['required', 'string', 'max:255'],
+            'jamoperasional_toko' => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'telp_toko' => $request->telp_toko,
+            'kontak_toko' => $request->kontak_toko,
+            'lokasi_toko' => $request->lokasi_toko,
+            'deskripsi_toko' => $request->deskripsi_toko,
+            'kategori_toko' => $request->kategori_toko,
+            'jamoperasional_toko' => $request->jamoperasional_toko,
         ]);
 
         event(new Registered($user));

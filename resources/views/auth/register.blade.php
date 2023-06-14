@@ -40,6 +40,32 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+        <br>
+        <br>       
+        Kontak Toko
+        <input id="kontak_toko" type="text" name="kontak_toko">
+        <br>
+        <br>
+        Lokasi Toko
+        <input id="lokasi_toko" type="text" name="lokasi_toko">
+        <br>
+        <br>
+        Telp Toko
+        <input id="telp_toko" type="text" name="telp_toko">
+        <br>
+        <br>
+        Deskripsi Toko
+        <input id="deskripsi_toko" type="text" name="deskripsi_toko">
+        <br>
+        <br>
+        Lokasi Toko
+        <input id="kategori_toko" type="text" name="kategori_toko">
+        <br>
+        <br>
+        Jam Operasional Toko
+        <input id="jamoperasional_toko" type="text" name="jamoperasional_toko">
+        <br>
+
         <div class="flex items-center justify-center mt-4">
             <!--<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}

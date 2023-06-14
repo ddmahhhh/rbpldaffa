@@ -30,6 +30,13 @@ body {
     grid: 65px / 25% 25% 25% 25%;
 }
 
+.user-icon {
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+    align-items: center;
+  }
+
 /*isi masuk*/
 .logo{
     text-align: center;
@@ -79,7 +86,6 @@ form input{
     margin-bottom: 15px;
     padding: 3% 7%;
 }
-
 
 .logo_kunci i{
     font-size: 100px;
