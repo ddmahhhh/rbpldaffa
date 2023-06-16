@@ -79,18 +79,6 @@
                                 <img src="{{asset('storage/uploads/'.$item->foto_barang)}}" alt="barang">
                             </div>
                         </div>
-                        <div class="w-[536px] h-[388px] mt-[34px] swiper-slide ">
-                            <div class="flex justify-center my-auto items-center">
-                                <h1>Foto Produk</h1>
-                            </div>
-                        </div>
-                        <div class="w-[536px] h-[388px] flex justify-center items-center swiper-slide">
-                            <div class="flex justify-center ">
-                                <div class="mb-12">
-                                    <img src="https://pbs.twimg.com/media/Fk9a4RnaAAEihoC.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -111,12 +99,12 @@
                         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="36" cy="36" r="35.5" stroke="black" />
                         </svg>
-                        <h1 class="text-2xl">Toko XYZ</h1>
+                        <h1 class="text-2xl">{{$item->name}}</h1>
                     </div>
                 </div>
                 <div class="w-[344px] h-[89px] ring-1 flex justify-center items-center ring-black rounded-xl">
                     <div class="flex flex-row gap-[31px]  items-center">
-                        <h1 class="text-xl font-light">PASAR KEPUTIH</h1>
+                        <h1 class="text-xl font-light">{{$item->name}}</h1>
                     </div>
                 </div>
             </div>
@@ -124,22 +112,22 @@
                 <div class="flex flex-col gap-4">
                     <div>
                         <h1 class="text-xl font-semibold">Lokasi</h1>
-                        <p class="text-xl">Jalan Sistem Informasi III No.4, Keputih, Sukolilo</p>
+                        <p class="text-xl">{{$item->lokasi_toko}}</p>
                     </div>
                     <div>
                         <h1 class="text-xl font-semibold">Kontak</h1>
-                        <p class="text-xl">0812 1234 5678</p>
+                        <p class="text-xl">{{$item->telp_toko}}</p>
                     </div>
                 </div>
                 <div class="mr-14">
                     <h1 class="text-xl font-semibold">Jam Operasional</h1>
                     <div class="flex flex-row text-xl gap-7">
                         <p class="w-40">Senin s.d Jumat</p>
-                        <p>07.00-17.00</p>
+                        <p>{{$item->jamoperasional_toko}}</p>
                     </div>
                     <div class="flex flex-row text-xl gap-7">
                         <p class="w-40">Sabtu s.d Minggu</p>
-                        <p>10.00-17.00</p>
+                        <p>{{$item->jamoperasional_toko}}</p>
                     </div>
                 </div>
             </div>
