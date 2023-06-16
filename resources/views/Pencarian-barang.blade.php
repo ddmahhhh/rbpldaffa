@@ -68,6 +68,15 @@
             </div>
         </div>
     </div>
+    @if ($toko->isNotEmpty())
+    @php
+        $item = $toko->first();
+    @endphp
+<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
 
 
     <div class="flex flex-row px-3 ring-1 items-center ring-black rounded-lg h-[214px] mt-4">
@@ -80,104 +89,61 @@
         </div>
         <div class="flex text-xl flex-col w-[470px] gap-4">
             <h1 class="text-3xl font-light">
-                {{$toko->name}}
+                {{$item->name}}
             </h1>
             <div>
                 <h1 class="font-semibold">Lokasi</h1>
-                <p class="font-light">{{$toko->lokasi_toko}}</p>
+                <p class="font-light">{{$toko[1]->lokasi_toko}}</p>
             </div>
             <div>
                 <h1 class="font-semibold">Kontak</h1>
-                <p class="font-light">{{$toko->telp_toko}}</p>
+                <p class="font-light">{{$toko[1]->telp_toko}}</p>
             </div>
         </div>
         <div class="flex text-xl ml-32 font-light  pb-12 flex-col">
             <div class="ring-1 ring-black w-[316px] h-[34px] mb-5 rounded-md flex justify-center items-center">
-                <h1>{{$toko->lokasi_toko}}</h1>
+                <h1>{{$toko[1]->lokasi_toko}}</h1>
             </div>
             <h1 class="font-semibold">Jam Operasional</h1>
             <div class="flex flex-col ">
                 <div class="flex flex-row gap-5">
                     <p class="w-40">Senin s.d Jumat</p>
-                    <p>{{$toko->jamoperasional_toko}}</p>
+                    <p>{{$toko[1]->jamoperasional_toko}}</p>
                 </div>
                 <div class="flex flex-row gap-5">
                     <p class="w-40">Sabtu s.d Minggu</p>
-                    <p>{{$toko->jamoperasional_toko}}</p>
+                    <p>{{$toko[1]->jamoperasional_toko}}</p>
                 </div>
 
             </div>
         </div>
+        @endif
     </div>
+
     <div class="my-20">
         <h1 class="font-semibold text-4xl">Produk Toko</h1>
     </div>
+    @foreach ($items as $t)
+
     <div class="flex flex-row justify-center mb-12 gap-[31px]">
         <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
             <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
                 <div class="flex justify-center mt-2 items-center">
                     <img class="rounded-sm w-11/12 "
-                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
-                        alt="">
+                        src="{{asset('storage/uploads/'.$t->foto_barang)}}">
                 </div>
             </div>
             <div class="text-left flex flex-col justify-start mb-4 gap-1">
-                <h1 class="text-lg">Nama Produk</h1>
-                <h1 class="text-2xl">Rp 50.XXX,-</h1>
+                <h1 class="text-lg">{{$t->nama_barang}}</h1>
+                <h1 class="text-2xl">Rp {{$t->harga}}</h1>
             </div>
             <div class="flex justify-start">
-                <h1>Toko XYZ</h1>
+                <h1>{{$t->name}}</h1>
             </div>
         </div>
-        <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
-            <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
-                <div class="flex justify-center mt-2 items-center">
-                    <img class="rounded-sm w-11/12 "
-                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
-                        alt="">
-                </div>
-            </div>
-            <div class="text-left flex flex-col justify-start mb-4 gap-1">
-                <h1 class="text-lg">Nama Produk</h1>
-                <h1 class="text-2xl">Rp 50.XXX,-</h1>
-            </div>
-            <div class="flex justify-start">
-                <h1>Toko XYZ</h1>
-            </div>
-        </div>
-        <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
-            <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
-                <div class="flex justify-center mt-2 items-center">
-                    <img class="rounded-sm w-11/12 "
-                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
-                        alt="">
-                </div>
-            </div>
-            <div class="text-left flex flex-col justify-start mb-4 gap-1">
-                <h1 class="text-lg">Nama Produk</h1>
-                <h1 class="text-2xl">Rp 50.XXX,-</h1>
-            </div>
-            <div class="flex justify-start">
-                <h1>Toko XYZ</h1>
-            </div>
-        </div>
-        <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
-            <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
-                <div class="flex justify-center mt-2 items-center">
-                    <img class="rounded-sm w-11/12 "
-                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
-                        alt="">
-                </div>
-            </div>
-            <div class="text-left flex flex-col justify-start mb-4 gap-1">
-                <h1 class="text-lg">Nama Produk</h1>
-                <h1 class="text-2xl">Rp 50.XXX,-</h1>
-            </div>
-            <div class="flex justify-start">
-                <h1>Toko XYZ</h1>
-            </div>
-        </div>
+        @endforeach
     </div>
+
 </body>
 
 </html>

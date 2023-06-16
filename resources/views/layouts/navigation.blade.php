@@ -9,8 +9,8 @@
 
             <!-- Settings Dropdown & Navigation Links -->
             <div class="hidden sm:flex sm:items-center sm:ml-6 ">
-            
-                <div class="hidden space-x-8 sm:ml-10 sm:flex sm:text-black-500"> 
+
+                <div class="hidden space-x-8 sm:ml-10 sm:flex sm:text-black-500">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Beranda') }}
                     </x-nav-link>
@@ -20,7 +20,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Toko') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('showBarang')" :active="request()->routeIs('dashboard')">
                         {{ __('Pencarian Barang') }}
                     </x-nav-link>
                 </div>

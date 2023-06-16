@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\TokoController;
+use App\Http\Controllers\JointableController;
+use App\Http\Controllers\EtalaseController;
 use Illuminate\View\View;
 
 /*
@@ -39,12 +41,15 @@ Route::get('/Searchitem', function () {
 });
 
 Route::get('/listtoko', [TokoController::class,'index']);
-Route::get('/listtoko/{id}', [TokoController::class,'show'])->name('show');
+Route::get('/listtoko/{id}', [JointableController::class,'indextoko'])->name('show.toko');
 Route::get('/listtoko', [TokoController::class,'search'])->name('search');
 
 
-Route::get('/showbarang', [BarangController::class,'index'])->name('showbarang');
+Route::get('/showbarang', [BarangController::class,'index'])->name('show');
 Route::get('/cari', [BarangController::class,'cari'])->name('cari');
+Route::get('/compareitem', [BarangController::class,'compare'])->name('banding');
+Route::get('/banding', [BarangController::class,'searchitem'])->name('banding');
+
 
 //route that need authentication
 Route::middleware('auth')->group(function () {
@@ -55,13 +60,13 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/upbarang', [BarangController::class,'store']);
-    Route::get('/upbarang', [BarangController::class,'indexpost']);
-    Route::get('/upbarang/{id}', [BarangController::class, 'show'])->name('post.show');
+    Route::get('/upbarang', [BarangController::class,'indexpost'])->name('post.show');
+    Route::get('/showbarang/{id}', [JointableController::class, 'indexinfo'])->name('showbarang');
 
 Route::get('/etalase-toko', [EtalaseController::class, 'etalase'])->name('etalase');
 });
 
-Route::get('/halaman-barang', [EtalaseController::class, 'showBarang']);
+Route::get('/halaman-barang', [EtalaseController::class, 'showBarang'])->name('showBarang');
 Route::post('/tambah-barang', [BarangController::class, 'tambahBarang']);
 
 Route::get('/update-barang/{id}', [BarangController::class, 'viewBarang']);
