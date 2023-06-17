@@ -9,43 +9,45 @@
         </p>
     </header>
 
-    <form method="post" action="" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
+        @method('patch')
 
         <!-- Nama Toko -->
         <div>
-            <x-text-input id="nama_toko" class="block mt-1 w-full" placeholder="Nama Toko" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-label for="name" :value="__('Nama Toko')" />
+            <x-text-input id="nama_toko" class="block mt-1 w-full" placeholder="Nama Toko" type="text" name="name" :value="old('nama_toko', $user->name)" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        </div> 
+
+        <div>
+        <x-input-label for="kontak_toko" :value="__('Kontak Toko')" />
+            <x-text-input id="kontak_toko" class="block mt-1 w-full" placeholder="Kontak Toko" type="text" name="kontak_toko" :value="old('kontak_toko', $user->kontak_toko)" required autofocus autocomplete="name" />
+            
         </div>
 
         <div>
-            <x-text-input id="kontak_toko" class="block mt-1 w-full" placeholder="Kontak Toko" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <x-input-label for="lokasi_toko" :value="__('Lokasi Toko')" />
+            <x-text-input id="lokasi_toko" class="block mt-1 w-full" placeholder="Lokasi Toko" type="text" name="lokasi_toko" :value="old('lokasi_toko', $user->lokasi_toko)" required autofocus autocomplete="name" />
+            
         </div>
 
         <div>
-            <x-text-input id="pasar_toko" class="block mt-1 w-full" placeholder="Pasar yang Ditempati" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <x-input-label for="deskripsi_toko" :value="__('Deskripsi Toko')" />
+            <x-text-input id="deskripsi_toko" class="block mt-1 w-full" placeholder="Kontak Toko" type="text" name="deskripsi_toko" :value="old('deskripsi_toko', $user->deskripsi_toko)" required autofocus autocomplete="name" />
+           
         </div>
 
         <div>
-            <x-text-input id="lokasi_toko" class="block mt-1 w-full" placeholder="Lokasi Toko" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <x-input-label for="kategori_toko" :value="__('Kategori Toko')" />
+            <x-text-input id="kategori_toko" class="block mt-1 w-full" placeholder="Kategori Toko" type="text" name="kategori_toko" :value="old('kategori_toko', $user->kategori_toko)" required autofocus autocomplete="name" />
+            
         </div>
 
         <div>
-            <x-text-input id="deskripsi_toko" class="block mt-1 w-full" placeholder="Kontak Toko" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-
-        <div>
-            <x-text-input id="kategori_toko" class="block mt-1 w-full" placeholder="Kategori Toko" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
-
-        <div>
-            <x-text-input id="operasional_toko" class="block mt-1 w-full" placeholder="Jam Operasional Toko" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <x-input-label for="jamoperasional_toko" :value="__('Jam Operasional Toko')" />
+            <x-text-input id="jamoperasional_toko" class="block mt-1 w-full" placeholder="Jam Operasional Toko" type="text" name="jamoperasional_toko" :value="old('jamoperasional_toko', $user->jamoperasional_toko)" required autofocus autocomplete="name" />
+            
         </div>
 
         <div class="flex items-center gap-4">

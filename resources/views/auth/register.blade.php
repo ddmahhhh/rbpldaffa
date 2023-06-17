@@ -15,7 +15,7 @@
 
         <!-- Email Address -->
         <div class="mt-4">
-            <x-text-input id="email" class="block mt-1 w-full" placeholder="Email" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-text-input id="email" class="block mt-1 w-full" placeholder="Email" type="email" name="email" :value="old('email')" required autocomplete="name" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -40,31 +40,53 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <br>
-        <br>       
-        Kontak Toko
-        <input id="kontak_toko" type="text" name="kontak_toko">
-        <br>
-        <br>
-        Lokasi Toko
-        <input id="lokasi_toko" type="text" name="lokasi_toko">
-        <br>
-        <br>
-        Telp Toko
-        <input id="telp_toko" type="text" name="telp_toko">
-        <br>
-        <br>
-        Deskripsi Toko
-        <input id="deskripsi_toko" type="text" name="deskripsi_toko">
-        <br>
-        <br>
-        Lokasi Toko
-        <input id="kategori_toko" type="text" name="kategori_toko">
-        <br>
-        <br>
-        Jam Operasional Toko
-        <input id="jamoperasional_toko" type="text" name="jamoperasional_toko">
-        <br>
+         <!-- Kontak Toko -->
+         <div class="mt-4">
+            <x-text-input id="kontak_toko" class="block mt-1 w-full"
+                            placeholder="Kontak Toko"
+                            type="text"
+                            name="kontak_toko" required autocomplete="name" />
+        </div>
+
+        <!-- Lokasi Toko -->
+        <div class="mt-4">
+            <x-text-input id="lokasi_toko" class="block mt-1 w-full"
+                            placeholder="Lokasi Toko"
+                            type="text"
+                            name="lokasi_toko" required autocomplete="name" />
+        </div>
+
+        <!-- Telepon Toko -->
+        <div class="mt-4">
+            <x-text-input id="telp_toko" class="block mt-1 w-full"
+                            placeholder="Telepon Toko"
+                            type="text"
+                            name="telp_toko" required autocomplete="name" />
+        </div>
+
+        <!-- Deskripsi Toko -->
+        <div class="mt-4">
+            <x-text-input id="deskripsi_toko" class="block mt-1 w-full"
+                            placeholder="Deskripsi Toko"
+                            type="text"
+                            name="deskripsi_toko" required autocomplete="name" />
+        </div> 
+
+        <!-- Kategori Toko -->
+        <div class="mt-4">
+            <x-text-input id="kategori_toko" class="block mt-1 w-full"
+                            placeholder="Kategori Toko"
+                            type="text"
+                            name="kategori_toko" required autocomplete="name" />
+        </div>
+
+        <!-- Jam Operasional Toko -->
+        <div class="mt-4">
+            <x-text-input id="jamoperasional_toko" class="block mt-1 w-full"
+                            placeholder="Jam Operasional Toko"
+                            type="text"
+                            name="jamoperasional_toko" required autocomplete="name" />
+        </div>
 
         <div class="flex items-center justify-center mt-4">
             <!--<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
