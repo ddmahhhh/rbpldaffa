@@ -25,7 +25,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">{{ $item->nama_barang }}</h6>
                                 <p class="fw-medium">Rp {{ $item->harga }},-</p>
-                                <img src="{{$item->foto_barang}}" />
+                                <img src="{{ asset('foto_barang/'.$item->foto_barang) }}" />
                                 <!--<img src="{{ ' storage/foto_barang/.$item->foto_barang' }}" alt="Foto Barang"> -->
                                <!-- {{asset('storage/uploads/'.$item->foto_barang)}} -->
                                 <p class="mt-1">{{ $item->deskripsi_barang }}</p>

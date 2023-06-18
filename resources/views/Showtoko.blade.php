@@ -197,7 +197,7 @@
         <ul class="navbar-links">
             <li><a href="/dashboard">Beranda</a></li>
             <li><a href="/listtoko">Toko</a></li>
-            <li><a href="#">Bandingkan Harga</a></li>
+            <li><a href="/banding">Bandingkan Harga</a></li>
         </ul>
         <div class="navbar-profile">
             <i class="fas fa-user profile-icon"></i>
@@ -217,7 +217,7 @@
                 @foreach ($toko as $t)
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-image" src={{ $t->foto_toko }} alt="Card Image">
+                            <img class="card-image" src="{{ $t->foto_toko }}" alt="Card Image">
                             <div class="card-text">
                                 <h2>{{ $t->name }}</h2>
                             </div>

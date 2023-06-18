@@ -12,7 +12,7 @@ body{
 
 .header{
     margin: auto;
-    margin: 40px 45px;
+    margin: 30px 45px;
     display: flex;
     justify-content: space-between;
 }
@@ -45,4 +45,75 @@ form{
 .submit{
     margin: 40px;
     margin: 2% 20%
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #000000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links li {
+    margin-right: 80px;
+}
+
+.navbar-links li a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Add transition for smooth effect */
+}
+
+.navbar-links li a:hover {
+    color: #808080;
+    /* Set the color on hover */
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-tittle {
+    display: flex;
+    margin-right: auto;
+    color: #000000;
+    font-weight: 700;
+}
+/* ... Your existing styles ... */
+
+.dropdown-menu {
+    display: none;
+    padding-left: 10px;
+}
+
+.dropdown-menu li {
+    margin-bottom: 5px;
+}
+
+.dropdown-link.active+.dropdown-menu {
+    display: block;
+}
+
+.navbar-links li {
+    margin-right: 40px;
 }

@@ -47,7 +47,7 @@ Route::get('/listtoko', [TokoController::class,'search'])->name('search');
 Route::get('/showbarang', [BarangController::class,'index'])->name('show');
 Route::get('/cari', [BarangController::class,'cari'])->name('cari');
 Route::get('/compareitem', [BarangController::class,'compare'])->name('banding');
-Route::get('/banding', [BarangController::class,'searchitem'])->name('banding');
+Route::get('/banding', [BarangController::class,'cari'])->name('banding');
 
 
 //route that need authentication
