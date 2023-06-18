@@ -18,19 +18,19 @@
                 @csrf
               <div class="mb-3">
                 <label for="nama-barang" class="form-label">Nama Barang</label>
-                <input type="text" class="form-control" name="nama_barang" id="nama_barang" value="{{ $barang->nama_barang }}">
+                <input type="text" name="nama_barang" >
               </div>
               <div class="mb-3">
                 <label for="nama-barang" class="form-label" value="Rp">Harga</label>
-                <input type="text" class="form-control" name="harga" id="nama_barang" value="{{ $barang->harga }}">
+                <input type="text" name="harga" >
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
-                <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3">{{ $barang->deskripsi }}</textarea>
+                <textarea class="form-control" name="deskripsi_barang"> </textarea>
               </div>
               <div class="mb-3">
                 <label for="formFile" class="form-label">Unggah Foto Barang</label>
-                <input class="form-control" name="foto_barang" type="file" id="formFile" value="{{ $barang->foto_barang }}">
+                <input type="file" name="foto_barang">
               </div>
               <br>
               <a href="/etalase-toko" type="submit" class="btn btn-outline-dark">Batal</a>

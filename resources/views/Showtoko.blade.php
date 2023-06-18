@@ -234,21 +234,13 @@
 
 
 
-<body>
-    <nav class="navbar">
-        <div class="navbar-tittle">
-            <p><strong>E-PASAR</strong></p>
-        </div>
-
-        <ul class="navbar-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Toko</a></li>
-            <li><a href="#">Bandingkan Harga</a></li>
-        </ul>
-        <div class="navbar-profile">
-            <i class="fas fa-user profile-icon"></i>
-        </div>
-    </nav>
+<body >
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 text-gray-200 leading-tight">
+                {{ __('Semua Produk') }}
+            </h2>
+        </x-slot>
 
     <div class="searchbar">
         <form action="{{ route('search') }}" method="GET">
@@ -297,6 +289,6 @@
 </body>
 
 </html>
-
+</x-app-layout>
 
 

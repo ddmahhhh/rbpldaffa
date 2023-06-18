@@ -46,8 +46,8 @@ Route::get('/listtoko', [TokoController::class,'search'])->name('search');
 
 Route::get('/showbarang', [BarangController::class,'index'])->name('show');
 Route::get('/cari', [BarangController::class,'cari'])->name('cari');
-Route::get('/compareitem', [BarangController::class,'compare'])->name('banding');
-Route::get('/banding', [BarangController::class,'cari'])->name('banding');
+Route::get('/compareitem', [BarangController::class,'searchitem'])->name('banding');
+Route::get('/banding', [BarangController::class,'cari'])->name('bandings');
 
 
 //route that need authentication
@@ -70,5 +70,5 @@ Route::post('/tambah-barang', [BarangController::class, 'tambahBarang']);
 
 Route::get('/update-barang/{id}', [BarangController::class, 'viewBarang']);
 Route::post('/updated-barang/{id}', [BarangController::class, 'updateBarang']);
-Route::get('/delete-barang/{id}', [EtalaseController::class, 'deleteBarang'])->name('delete');
+Route::get('/delete-barang/{id}', [EtalaseController::class, 'deleteBarang']);
 

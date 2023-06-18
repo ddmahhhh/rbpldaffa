@@ -127,15 +127,34 @@ class BarangController extends Controller
     }
 
 
-    public function tambahBarang(Request $request)
+    public function tambahbarang(Request $request)
     {
-        $dataBarang = barang::create($request->all());
-        if($request->hasFile('foto_produk')){
-            $request->file('foto_produk')->move('foto_produk/', $request->file('foto_produk')->getClientOriginalName());
-            $dataBarang->foto_produk = $request->file('foto_produk')->getClientOriginalName();
-            $dataBarang->save();
-        }
-        return redirect()->route('etalase')->with('success', 'Barang berhasil ditambahkan!');
+        // Validasi data
+        $validatedData = $request->validate([
+            'nama_barang' => 'required',
+            'harga' => 'required',
+            'deskripsi_barang' => 'required',
+            'foto_barang' => 'required|file',
+
+        ]);
+
+        //Get real name dan Upload Directory
+        $file= $request->file('foto_barang')->getClientOriginalName();
+        $directory= 'public/uploads';
+        $path = $request ->file('foto_barang')->storeAs($directory,$file);
+        $userid =auth()->user()->id;
+
+         // Simpan data ke database
+        $item = new barang;
+        $item->nama_barang = $request->nama_barang;
+        $item->harga = $request->harga;
+        $item->deskripsi_barang = $request->deskripsi_barang;
+        $item->foto_barang = $file;
+        $item->user_id= $userid;
+        $item->save();
+
+        // Redirect dengan pesan sukses
+        return redirect()->action([BarangController::class,'index'])->with('success', 'Post created successfully!');
     }
 
     public function viewBarang($id)
