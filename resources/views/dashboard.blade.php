@@ -21,17 +21,19 @@
                 @foreach ($item as $item)
                     <div class="col-2">
                         <a href="{{ route('show', ['id' => $item]) }}">
-                        <div class="card h-100"> 
+                        <div class="card h-100">
                             <div class="card-body">
                                 <h6 class="card-title">{{ $item->nama_barang }}</h6>
                                 <p class="fw-medium">Rp {{ $item->harga }},-</p>
-                                <img src="{{url('/storage/uploads/'.$posts->foto_barang)}}" class="img-thumbnail mb-4 object-fit-cover border rounded" alt="" width="150px" height="150px">
+                                <img src="{{$item->foto_barang}}" />
+                                <!--<img src="{{ ' storage/foto_barang/.$item->foto_barang' }}" alt="Foto Barang"> -->
+                               <!-- {{asset('storage/uploads/'.$item->foto_barang)}} -->
                                 <p class="mt-1">{{ $item->deskripsi_barang }}</p>
                                 </div>
                         </div>
                         </a>
                     </div>
-                @endforeach 
+                @endforeach
                 </div>
     </div>
 </x-app-layout>

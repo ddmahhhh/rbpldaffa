@@ -131,6 +131,6 @@ class BarangController extends Controller
         $barang->update($request->all());
         return redirect()->route('etalase')->with('success', 'Barang berhasil diubah!');
     }
-   
+
 
 }
