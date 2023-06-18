@@ -23,7 +23,7 @@
 <div class="col-md-15">
                 <div class="row">
                 <div class="col-2">
-                        <div class="card h-100"> 
+                        <div class="card h-100">
                             <div class="card-body">
                                 <h6 class="card-title">{{ $t->nama_barang }}</h6>
                                 <p class="fw-medium">Rp {{ $t->harga }},-</p>
@@ -32,9 +32,9 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
-            
+
 @endforeach
 @else
     <div>

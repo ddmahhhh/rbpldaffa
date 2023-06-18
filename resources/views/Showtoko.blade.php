@@ -10,9 +10,10 @@
     <style>
         /* Add some basic styling */
         body {
-            margin: 0;
+            margin: auto;
             padding: 0;
             font-family: 'Inter', sans-serif;
+            width: 80%;
         }
 
         .navbar {
@@ -123,6 +124,7 @@
             flex: 1;
             width: 800px;
             height: 170px;
+            font-weight: 100;
         }
 
         .btn {
@@ -142,64 +144,13 @@
 
         }
 
-        .navbar-hamburger {
+        .navbar-tittle {
             display: flex;
             margin-right: auto;
-        }
-
-        .hamburger-icon {
             color: #000000;
-            /* Set the color of the hamburger icon */
-            font-size: 20px;
-            /* Adjust the size of the icon */
-            text-decoration: none;
+            font-weight: 700;
         }
-
-        .hamburger-icon:hover {
-            color: #808080;
-            /* Set the color of the hamburger icon on hover */
-            transition: color 0.3s ease;
-        }
-
         /* ... Your existing styles ... */
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -200px;
-            /* Initially hide the sidebar off the screen */
-            width: 200px;
-            height: 100vh;
-            background-color: #f1f1f1;
-            transition: left 0.3s ease;
-            z-index: 9999;
-        }
-
-        .sidebar-links {
-            list-style: none;
-            padding: 20px;
-        }
-
-        .sidebar-links li {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-
-        }
-
-        .sidebar-links li a {
-            color: #000000;
-            text-decoration: none;
-        }
-
-        .sidebar-links li a:hover {
-            color: #808080;
-        }
-
-        .sidebar.open {
-            left: 0;
-            /* Show the sidebar when 'open' class is applied */
-        }
 
         .dropdown-menu {
             display: none;
@@ -239,15 +190,13 @@
 
 <body>
     <nav class="navbar">
-        <div class="navbar-hamburger">
-            <a href="#" class="hamburger-icon">
-                <i class="fas fa-bars"></i>
-            </a>
+        <div class="navbar-tittle">
+            <p><strong>E-PASAR</strong></p>
         </div>
 
         <ul class="navbar-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Toko</a></li>
+            <li><a href="/dashboard">Beranda</a></li>
+            <li><a href="/listtoko">Toko</a></li>
             <li><a href="#">Bandingkan Harga</a></li>
         </ul>
         <div class="navbar-profile">
@@ -271,7 +220,6 @@
                             <img class="card-image" src={{ $t->foto_toko }} alt="Card Image">
                             <div class="card-text">
                                 <h2>{{ $t->name }}</h2>
-                                <p>{{ $t->kategori_toko }}</p>
                             </div>
                             <a href="{{ route('show', ['id' => $t->id]) }}" class="btn card-button">→</a>
                         </div>
@@ -287,47 +235,10 @@
         <br />
     </div>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
-
-    <div class="sidebar">
-        <ul class="sidebar-links">
-            <li><a href="#">Homepage</a></li>
-            <li><a href="#">Pengaturan Akun</a></li>
-            <li class="dropdown-link"><a href="#">Kategori Toko <i class="fas fa-chevron-down"></i></a></li>
-            <ul class="dropdown-menu">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-            </ul>
-            <li> <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
-            </li>
-
-
-            <!-- Add more sidebar links as needed -->
-        </ul>
-    </div>
-
     <script>
-        var hamburgerIcon = document.querySelector('.hamburger-icon');
-        var sidebar = document.querySelector('.sidebar');
         var body = document.querySelector('body');
         var dropdownLinks = document.querySelectorAll('.dropdown-link');
 
-        hamburgerIcon.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent the click event from bubbling up to the body
-            sidebar.classList.toggle('open');
-        });
-
-        body.addEventListener('click', function() {
-            sidebar.classList.remove('open');
-        });
 
         dropdownLinks.forEach(function(link) {
             link.addEventListener('click', function(e) {
@@ -341,6 +252,3 @@
 
 </html>
 
-
-
-ini udah nambah ila lu udah liat belum teh
