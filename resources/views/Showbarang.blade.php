@@ -35,8 +35,26 @@
                         </div>
                     </div>
 
+<br>
+<br>
+<br>
+<a href="{{ route('show', ['id' => $t]) }}">
+<div class="col-md-15">
+                <div class="row">
+                <div class="col-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ $t->nama_barang }}</h6>
+                                <p class="fw-medium">Rp {{ $t->harga }},-</p>
+                                <img src="{{asset('storage/uploads/'.$t->foto_barang)}}" class="img-thumbnail mb-4 object-fit-cover border rounded" alt="" width="150px" height="150px">
+                                <p class="mt-1">{{ $t->deskripsi }}</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-    @endforeach
+
+@endforeach
 @else
     <div>
         <h2>No posts found</h2>

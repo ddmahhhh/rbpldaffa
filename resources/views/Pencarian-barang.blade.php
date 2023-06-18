@@ -123,27 +123,72 @@
     <div class="my-20">
         <h1 class="font-semibold text-4xl">Produk Toko</h1>
     </div>
-    @foreach ($items as $t)
-
     <div class="flex flex-row justify-center mb-12 gap-[31px]">
         <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
             <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
                 <div class="flex justify-center mt-2 items-center">
                     <img class="rounded-sm w-11/12 "
-                        src="{{asset('storage/uploads/'.$t->foto_barang)}}">
+                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
+                        alt="">
                 </div>
             </div>
             <div class="text-left flex flex-col justify-start mb-4 gap-1">
-                <h1 class="text-lg">{{$t->nama_barang}}</h1>
-                <h1 class="text-2xl">Rp {{$t->harga}}</h1>
+                <h1 class="text-lg">Nama Produk</h1>
+                <h1 class="text-2xl">Rp 50.XXX,-</h1>
             </div>
             <div class="flex justify-start">
-                <h1>{{$t->name}}</h1>
+                <h1>Toko XYZ</h1>
             </div>
         </div>
-        @endforeach
+        <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
+            <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
+                <div class="flex justify-center mt-2 items-center">
+                    <img class="rounded-sm w-11/12 "
+                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
+                        alt="">
+                </div>
+            </div>
+            <div class="text-left flex flex-col justify-start mb-4 gap-1">
+                <h1 class="text-lg">Nama Produk</h1>
+                <h1 class="text-2xl">Rp 50.XXX,-</h1>
+            </div>
+            <div class="flex justify-start">
+                <h1>Toko XYZ</h1>
+            </div>
+        </div>
+        <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
+            <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
+                <div class="flex justify-center mt-2 items-center">
+                    <img class="rounded-sm w-11/12 "
+                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
+                        alt="">
+                </div>
+            </div>
+            <div class="text-left flex flex-col justify-start mb-4 gap-1">
+                <h1 class="text-lg">Nama Produk</h1>
+                <h1 class="text-2xl">Rp 50.XXX,-</h1>
+            </div>
+            <div class="flex justify-start">
+                <h1>Toko XYZ</h1>
+            </div>
+        </div>
+        <div class="ring-1 ring-black w-[287px] px-5 flex flex-col  h-[417px] rounded-lg">
+            <div class="mt-4 flex justify-center ring-1 w-[247px] h-[268px] mx-auto ring-black">
+                <div class="flex justify-center mt-2 items-center">
+                    <img class="rounded-sm w-11/12 "
+                        src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQiXKmg1bNUU3QGOEzxL2_ld3lv_G4J0DpmGTU_Ix4iVb-M2fB1wdFf0JDAfnuSAlqaFyusi9F5NHCa13E"
+                        alt="">
+                </div>
+            </div>
+            <div class="text-left flex flex-col justify-start mb-4 gap-1">
+                <h1 class="text-lg">Nama Produk</h1>
+                <h1 class="text-2xl">Rp 50.XXX,-</h1>
+            </div>
+            <div class="flex justify-start">
+                <h1>Toko XYZ</h1>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>

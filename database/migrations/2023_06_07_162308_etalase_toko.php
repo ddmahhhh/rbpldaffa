@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('harga', 255);
             $table->string('deskripsi_barang', 255);
             $table->string('foto_barang', 255);
+            $table->foreignid('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('Cascade');
         });
 
     }

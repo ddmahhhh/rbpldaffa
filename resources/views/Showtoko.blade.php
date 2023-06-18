@@ -149,7 +149,65 @@
             display: flex;
             margin-right: auto;
             color: #000000;
-            font-weight: 700;
+            /* Set the color of the hamburger icon */
+            font-size: 20px;
+            /* Adjust the size of the icon */
+            text-decoration: none;
+        }
+
+        .hamburger-icon:hover {
+            color: #808080;
+            /* Set the color of the hamburger icon on hover */
+            transition: color 0.3s ease;
+        }
+
+        /* ... Your existing styles ... */
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            /* Initially hide the sidebar off the screen */
+            width: 200px;
+            height: 100vh;
+            background-color: #f1f1f1;
+            transition: left 0.3s ease;
+            z-index: 9999;
+        }
+
+        .sidebar-links {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+
+        }
+
+        .sidebar-links li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .sidebar-links li a:hover {
+            color: #808080;
+        }
+
+        .sidebar.open {
+            left: 0;
+            /* Show the sidebar when 'open' class is applied */
+        }
+
+        .dropdown-menu {
+            display: none;
+            padding-left: 10px;
+        }
+
+        .dropdown-menu li {
+            margin-bottom: 5px;
         }
 
 
@@ -183,13 +241,9 @@
         </div>
 
         <ul class="navbar-links">
-            <li><a href="/dashboard">Beranda</a></li>
-            <li><a href="/listtoko">Toko</a></li>
-<<<<<<< Updated upstream
-            <li><a href="/banding">Bandingkan Harga</a></li>
-=======
-            <li><a href="/compareitem">Bandingkan Harga</a></li>
->>>>>>> Stashed changes
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Toko</a></li>
+            <li><a href="#">Bandingkan Harga</a></li>
         </ul>
         <div class="navbar-profile">
             <i class="fas fa-user profile-icon"></i>
@@ -213,7 +267,7 @@
                             <div class="card-text">
                                 <h2>{{ $t->name }}</h2>
                             </div>
-                            <a href="{{ route('show', ['id' => $t->id]) }}" class="btn card-button">→</a>
+                            <a href="{{ route('show.toko', ['id' => $t->id]) }}" class="btn card-button">→</a>
                         </div>
                     </div>
                 @endforeach
@@ -243,3 +297,6 @@
 </body>
 
 </html>
+
+
+

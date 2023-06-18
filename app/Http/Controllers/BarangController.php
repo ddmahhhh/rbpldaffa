@@ -29,6 +29,7 @@ class BarangController extends Controller
         // Kirim data posting ke tampilan
         return view('Showbarang', compact('item'));
     }
+
     public function beranda()
     {
         //
