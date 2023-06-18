@@ -123,8 +123,9 @@ class BarangController extends Controller
             ->get();
 
         // Return the search view with the resluts compacted
-        return view('Showbarang', compact('item'));
+        return view('dashboard', compact('item'));
     }
+
 
     public function tambahBarang(Request $request)
     {

@@ -15,25 +15,43 @@
         </div>
     </div>
 -->
-    <br>
-    <div class="col-md-15">
-                <div class="row">
-                @foreach ($item as $item)
-                    <div class="col-2">
-                        <a href="{{ route('show', ['id' => $item]) }}">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6 class="card-title">{{ $item->nama_barang }}</h6>
-                                <p class="fw-medium">Rp {{ $item->harga }},-</p>
-                                <img src="{{ asset('foto_barang/'.$item->foto_barang) }}" />
-                                <!--<img src="{{ ' storage/foto_barang/.$item->foto_barang' }}" alt="Foto Barang"> -->
-                               <!-- {{asset('storage/uploads/'.$item->foto_barang)}} -->
-                                <p class="mt-1">{{ $item->deskripsi_barang }}</p>
-                                </div>
+<form action="{{ route('cari') }}" method="GET">
+    <input type="text" placeholder="Cari Barang!" name="search" required />
+    <button type="submit">Search</button>
+</form>
+@if ($item->isNotEmpty())
+    @foreach ($item as $item)
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-md-15">
+                    <div class="row">
+                        <div class="col-2">
+                            <a href="{{ route('showbarang', ['id' => $item]) }}">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">{{ $item->nama_barang }}</h6>
+                                    <p class="fw-medium">Rp {{ $item->harga }},-</p>
+                                    <img src="{{ asset('Storage/uploads/'.$item->foto_barang) }}" />
+
+                                    <p class="mt-1">{{ $item->deskripsi_barang }}</p>
+                                    </div>
+                            </div>
+                            </a>
                         </div>
-                        </a>
+
                     </div>
-                @endforeach
-                </div>
+<br>
+<br>
+<br>
+
+@endforeach
+@else
+    <div>
+        <h2>No posts found</h2>
+    </div>
+@endif
+
     </div>
 </x-app-layout>
