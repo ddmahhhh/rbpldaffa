@@ -21,7 +21,14 @@ class BarangController extends Controller
         // Kirim data posting ke tampilan
         return view('Showbarang', compact('item'));
     }
+    public function indexhome()
+    {
+        //
+        $barang = barang::all();
 
+        // Kirim data posting ke tampilan
+        return view('Showbarang', compact('item'));
+    }
     public function beranda()
     {
         //
@@ -30,8 +37,6 @@ class BarangController extends Controller
         // Kirim data posting ke tampilan
         return view('dashboard', compact('item'));
     }
-
-
     public function indexpost()
     {
         //
@@ -52,12 +57,14 @@ class BarangController extends Controller
             'harga' => 'required',
             'deskripsi_barang' => 'required',
             'foto_barang' => 'required|file',
+
         ]);
 
         //Get real name dan Upload Directory
         $file= $request->file('foto_barang')->getClientOriginalName();
         $directory= 'public/uploads';
         $path = $request ->file('foto_barang')->storeAs($directory,$file);
+        $userid =auth()->user()->id;
 
          // Simpan data ke database
         $item = new barang;
@@ -65,12 +72,22 @@ class BarangController extends Controller
         $item->harga = $request->harga;
         $item->deskripsi_barang = $request->deskripsi_barang;
         $item->foto_barang = $file;
+        $item->user_id= $userid;
         $item->save();
 
         // Redirect dengan pesan sukses
         return redirect()->action([BarangController::class,'index'])->with('success', 'Post created successfully!');
 
 
+    }
+    public function compare()
+    {
+        //
+        $post = barang::with('user')->get();
+        $post = barang::all();
+
+        // Kirim data posting ke tampilan
+        return view('bandingkan-harga', compact('post'));
     }
 
 
@@ -111,9 +128,9 @@ class BarangController extends Controller
     public function tambahBarang(Request $request)
     {
         $dataBarang = barang::create($request->all());
-        if($request->hasFile('foto_barang')){
-            $request->file('foto_barang')->move('foto_barang/', $request->file('foto_barang')->getClientOriginalName());
-            $dataBarang->foto_barang = $request->file('foto_barang')->getClientOriginalName();
+        if($request->hasFile('foto_produk')){
+            $request->file('foto_produk')->move('foto_produk/', $request->file('foto_produk')->getClientOriginalName());
+            $dataBarang->foto_produk = $request->file('foto_produk')->getClientOriginalName();
             $dataBarang->save();
         }
         return redirect()->route('etalase')->with('success', 'Barang berhasil ditambahkan!');
@@ -132,5 +149,17 @@ class BarangController extends Controller
         return redirect()->route('etalase')->with('success', 'Barang berhasil diubah!');
     }
 
+    public function searchitem(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $post = barang::query()
+            ->where('nama_barang', 'LIKE', "%{$search}%")
+            ->get();
+
+        // Return the search view with the resluts compacted
+        return view('bandingkan-harga', compact('post'));
+    }
 
 }

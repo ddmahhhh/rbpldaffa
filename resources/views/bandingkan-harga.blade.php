@@ -30,6 +30,7 @@
 </head>
 
 <body class="mx-[195px]">
+
     <nav>
         <div class="flex flex-row items-center justify-between mx-4 my-3">
             <div class="space-y-2">
@@ -38,10 +39,16 @@
                 <div class="w-8 h-1 rounded-md bg-black"></div>
             </div>
             <div class="flex items-center flex-row gap-[32px]">
-                <button class="underline underline-offset-2" href="">Home</button>
-                <button class="hover:underline underline-offset-2" href="">Pasar</button>
-                <button class="hover:underline underline-offset-2">Toko</button>
-                <button class="hover:underline underline-offset-2">Banding Harga</button>
+                <a href="/dashboard">
+                    <button class="underline underline-offset-2">Beranda</button>
+                </a>
+                <a href="/listtoko">
+                    <button class="hover:underline underline-offset-2">Toko</button>
+                </a>
+
+                <a href="/compareitem">
+                    <button class="hover:underline underline-offset-2">Banding Harga</button>
+                </a>
                 <div>
                     <svg class="w-[70px] h-[81px]" width="70" height="82" viewBox="0 0 70 82" fill="none"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -62,6 +69,7 @@
     </nav>
 
     <div class="mx-16 mt-6 flex items-center flex-row">
+        <a href="/dashboard">
         <button
             class="flex flex-row items-center w-fit md:w-[146px] rounded-md h-[51px] pr-2 gap-1 ring-1 ring-black justify-center"><svg
                 class="w-[20px] h-[15px]" xmlns="http://www.w3.org/2000/svg"
@@ -69,6 +77,8 @@
                 <path
                     d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
             </svg></i> Kembali</button>
+        </a>
+
         <div class="mx-auto">
             <input class="h-14 w-72 ring-1 ring-black pl-8 text-xl rounded-xl focus:outline-none" type="text"
                 placeholder="Cari Barang" name="" id="">

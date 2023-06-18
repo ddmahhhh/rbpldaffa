@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <style>
         /* Add some basic styling */
         body {
@@ -150,20 +151,7 @@
             color: #000000;
             font-weight: 700;
         }
-        /* ... Your existing styles ... */
 
-        .dropdown-menu {
-            display: none;
-            padding-left: 10px;
-        }
-
-        .dropdown-menu li {
-            margin-bottom: 5px;
-        }
-
-        .dropdown-link.active+.dropdown-menu {
-            display: block;
-        }
 
         /* Add responsive styles */
         /* Media Queries */
@@ -197,7 +185,11 @@
         <ul class="navbar-links">
             <li><a href="/dashboard">Beranda</a></li>
             <li><a href="/listtoko">Toko</a></li>
+<<<<<<< Updated upstream
             <li><a href="/banding">Bandingkan Harga</a></li>
+=======
+            <li><a href="/compareitem">Bandingkan Harga</a></li>
+>>>>>>> Stashed changes
         </ul>
         <div class="navbar-profile">
             <i class="fas fa-user profile-icon"></i>
@@ -251,4 +243,3 @@
 </body>
 
 </html>
-
