@@ -64,4 +64,6 @@
             @endif
         </div>
     </form>
+    <br>
+    <a href="/etalase-toko"><x-primary-button>{{ __('Etalase Toko') }}</x-primary-button></a>
 </section>

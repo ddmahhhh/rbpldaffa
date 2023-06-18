@@ -30,7 +30,7 @@
               </div>
               <div class="mb-3">
                 <label for="formFile" class="form-label">Unggah Foto Barang</label>
-                <input class="form-control" name="foto_produk" type="file" id="formFile" value="{{ $barang->foto_produk }}">
+                <input class="form-control" name="foto_barang" type="file" id="formFile" value="{{ $barang->foto_barang }}">
               </div>
               <br>
               <a href="/etalase-toko" type="submit" class="btn btn-outline-dark">Batal</a>

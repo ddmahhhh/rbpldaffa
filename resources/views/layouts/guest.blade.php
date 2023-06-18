@@ -7,7 +7,7 @@
 
         <title>E-Pasar</title>
         <!--{{ config('app.name', 'Laravel') }}-->
-
+    
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;600;700;800;900&display=swap" rel="stylesheet" />

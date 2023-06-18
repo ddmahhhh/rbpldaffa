@@ -16,7 +16,7 @@ class TokoController extends Controller
     public function index()
     {
         //
-        $toko = User::all();
+        $toko = toko::all();
 
         // Kirim data posting ke tampilan
         return view('Showtoko', compact('toko'));

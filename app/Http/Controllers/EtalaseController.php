@@ -9,6 +9,11 @@ use App\Models\barang;
 
 class EtalaseController extends Controller
 {
+    public function beranda(){
+        $barang   = barang::all();
+        return view('welcome')->with('barang', $barang);
+    }
+
     public function etalase(){
         $barang   = barang::all();
         return view('etalase-toko')->with('barang', $barang);

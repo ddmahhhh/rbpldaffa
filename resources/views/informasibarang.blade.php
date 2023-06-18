@@ -69,7 +69,7 @@
                 <path
                     d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
             </svg><a href="/upbarang"></i> Kembali</a></button>
-
+@foreach($item as $item)
         <div class="ring-1 w-[1072px] h-[740px]  ring-black mt-[24px]">
             <div class="flex flex-row mx-[68px]   gap-[39px]  justify-start">
                 <div class="swiper mySwiper ring-1 ring-black w-[536px] mt-[34px] h-[388px]">
@@ -132,6 +132,7 @@
                 </div>
             </div>
         </div>
+@endforeach
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <script>
             var swiper = new Swiper(".mySwiper", {

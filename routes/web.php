@@ -20,13 +20,12 @@ use Illuminate\View\View;
 */
 require __DIR__.'/auth.php';
 
-Route::get('/', function () {
+Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[BarangController::class, 'beranda']
+)->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/informasi', function () {
     return view('informasibarang');
@@ -40,7 +39,7 @@ Route::get('/Searchitem', function () {
     return view('Pencarian-barang');
 });
 
-Route::get('/listtoko', [TokoController::class,'index']);
+Route::get('/listtoko', [TokoController::class,'index'])->name('toko');
 Route::get('/listtoko/{id}', [JointableController::class,'indextoko'])->name('show.toko');
 Route::get('/listtoko', [TokoController::class,'search'])->name('search');
 

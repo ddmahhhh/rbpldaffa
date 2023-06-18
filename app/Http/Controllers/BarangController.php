@@ -22,6 +22,16 @@ class BarangController extends Controller
         return view('Showbarang', compact('item'));
     }
 
+    public function beranda()
+    {
+        //
+        $item = barang::all();
+
+        // Kirim data posting ke tampilan
+        return view('dashboard', compact('item'));
+    }
+
+
     public function indexpost()
     {
         //
@@ -101,9 +111,9 @@ class BarangController extends Controller
     public function tambahBarang(Request $request)
     {
         $dataBarang = barang::create($request->all());
-        if($request->hasFile('foto_produk')){
-            $request->file('foto_produk')->move('foto_produk/', $request->file('foto_produk')->getClientOriginalName());
-            $dataBarang->foto_produk = $request->file('foto_produk')->getClientOriginalName();
+        if($request->hasFile('foto_barang')){
+            $request->file('foto_barang')->move('foto_barang/', $request->file('foto_barang')->getClientOriginalName());
+            $dataBarang->foto_barang = $request->file('foto_barang')->getClientOriginalName();
             $dataBarang->save();
         }
         return redirect()->route('etalase')->with('success', 'Barang berhasil ditambahkan!');
@@ -121,6 +131,6 @@ class BarangController extends Controller
         $barang->update($request->all());
         return redirect()->route('etalase')->with('success', 'Barang berhasil diubah!');
     }
-
+   
 
 }

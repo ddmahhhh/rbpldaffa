@@ -11,7 +11,7 @@
 </head>
     <body>
         <div class="header">
-        <a href="/" class="btn btn-outline-dark">Kembali</a>
+        <a href="/profile" class="btn btn-outline-dark">Kembali</a>
         <span><h3>Etalase Toko</h3></span>
         <a href="/halaman-barang" class="btn btn-outline-dark">Tambah Barang</a>
         </div>
@@ -28,30 +28,15 @@
                             <div class="card-body">
                                 <h6 class="card-title">{{ $item->nama_barang }}</h6>
                                 <p class="fw-medium">Rp {{ $item->harga }},-</p>
-                                <img src="{{ asset('foto_produk/'.$item->foto_produk) }}" class="img-thumbnail mb-4 object-fit-cover border rounded" alt="" width="150px" height="150px">
-                                <p class="mt-1">{{ $item->deskripsi }}</p>
+                                <img src="{{ asset('foto_barang/'.$item->foto_barang) }}" class="img-thumbnail mb-4 object-fit-cover border rounded" alt="" width="150px" height="150px">
+                                <p class="mt-1">{{ $item->deskripsi_barang }}</p>
                                 <a href="/update-barang/{{ $item->id }}" class="btn btn-outline-dark">Edit</a>
                                 <a href="#" onclick="confirmation(event)" class="btn btn-outline-danger delete" item-id="{{ $item->id }}" item-name="{{ $item->nama_barang  }}">Hapus</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
-                @include('sweetalert::alert')
-<!--           
-                <div class="col-3">
-                    <div class="card" style="width: 18rem;">
-                        <a class="card-img-top">{{ $item->foto_produk }}</a>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->nama_barang }}</h5>
-                            <h6 class="card-title">Rp {{ $item->harga }},-</h6>
-                            <p class="card-text">{{ $item->deskripsi }}</p>
-                            <a href="#" class="btn btn-outline-secondary">Edit</a>
-                            <a href="#" class="btn btn-outline-danger">Hapus</a>
-                        </div>
-                    </div>
-                </div>
--->     
+    
                 </div>
 
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
