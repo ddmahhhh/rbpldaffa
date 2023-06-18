@@ -30,7 +30,6 @@
 </head>
 
 <body class="mx-[195px]">
-
     <nav>
         <div class="flex flex-row items-center justify-between mx-4 my-3">
             <div class="space-y-2">
@@ -39,16 +38,10 @@
                 <div class="w-8 h-1 rounded-md bg-black"></div>
             </div>
             <div class="flex items-center flex-row gap-[32px]">
-                <a href="/dashboard">
-                    <button class="underline underline-offset-2">Beranda</button>
-                </a>
-                <a href="/listtoko">
-                    <button class="hover:underline underline-offset-2">Toko</button>
-                </a>
-
-                <a href="/compareitem">
-                    <button class="hover:underline underline-offset-2">Banding Harga</button>
-                </a>
+                <button class="underline underline-offset-2" href="">Home</button>
+                <button class="hover:underline underline-offset-2" href="">Pasar</button>
+                <button class="hover:underline underline-offset-2">Toko</button>
+                <button class="hover:underline underline-offset-2">Banding Harga</button>
                 <div>
                     <svg class="w-[70px] h-[81px]" width="70" height="82" viewBox="0 0 70 82" fill="none"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -69,7 +62,6 @@
     </nav>
 
     <div class="mx-16 mt-6 flex items-center flex-row">
-        <a href="/dashboard">
         <button
             class="flex flex-row items-center w-fit md:w-[146px] rounded-md h-[51px] pr-2 gap-1 ring-1 ring-black justify-center"><svg
                 class="w-[20px] h-[15px]" xmlns="http://www.w3.org/2000/svg"
@@ -77,11 +69,13 @@
                 <path
                     d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
             </svg></i> Kembali</button>
-        </a>
-
         <div class="mx-auto">
-            <input class="h-14 w-72 ring-1 ring-black pl-8 text-xl rounded-xl focus:outline-none" type="text"
-                placeholder="Cari Barang" name="" id="">
+            <form action="{{ route('banding') }}" method="GET">
+                <input class="h-14 w-72 ring-1 ring-black pl-8 text-xl rounded-xl focus:outline-none" type="text"
+                placeholder="Cari Barang" name="search" id="">
+                <button type="submit">Search</button>
+            </form>
+
         </div>
     </div>
     <div class="mx-40 mt-12">
@@ -104,53 +98,23 @@
                         <th class="w-4/12 pt-4 pb-2 border-b text-left font-normal border-black">Harga</th>
                     </tr>
                 </thead>
+
+
+
                 <tbody>
+                    @if($post->isNotEmpty())
+                    @foreach ($post as $p )
                     <tr>
-                        <td class="py-4">Bawang Merah Segar
-                            1 Kg</td>
-                        <td class="py-4 ">Toko ABC</td>
-                        <td class="py-4 ">Rp 49.500,-</td>
+                        <td class="py-4">{{$p->nama_barang}}</td>
+                        <td class="py-4 ">{{$p->user->name }}</td>
+                        <td class="py-4 ">Rp.{{$p->harga}}</td>
                     </tr>
-                    <tr>
-                        <td class="py-4 ">Bawang Merah Murah 1 Kg</td>
-                        <td class="py-4 ">Toko bcd</td>
-                        <td class="py-4 ">Rp 48.900,-</td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 ">Bawang Merah 1 Kg</td>
-                        <td class="py-4 ">Toko fgh</td>
-                        <td class="py-4 ">Rp 49.500,-</td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 "><div class="w-56 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 "><div class="w-56 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 "><div class="w-56 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 "><div class="w-56 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 "><div class="w-56 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 "><div class="w-56 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></div></td>
-                        <td class="py-4 "><div class="w-40 h-8 bg-gray-300"></td>
-                    </tr>
+                    @endforeach
+                    @else
+                        <div>
+                            <h2>No posts found</h2>
+                        </div>
+                    @endif
                 </tbody>
             </table>
         </div>
